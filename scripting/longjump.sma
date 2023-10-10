@@ -167,11 +167,16 @@ public plugin_init() {
     
     register_event("DeathMsg", "death", "a");
     register_event("HLTV", "event_round_start", "a", "1=0", "2=0");
-}
+    set_task(300.0, "hirdetes")
 
+}
 public plugin_precache()
 {
 	precache_model(g_szLongJump_Model);
+}
+public hirdetes(id)
+{
+	ColorChat(id, GREEN, "^3[^4LongJump^3]^1Longjump képesség vásárlásához használd a ^4/blj ^1parancsot.")
 }
 public client_disconnected(id)
 {
